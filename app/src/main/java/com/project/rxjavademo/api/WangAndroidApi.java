@@ -1,10 +1,16 @@
 package com.project.rxjavademo.api;
 
+import com.project.rxjavademo.bean.ProjectBean;
+
+import retrofit2.Call;
+import retrofit2.http.GET;
+
 /**
  * @createTime: 7/29/21
  * @author: lady_zhou
- * @Description:
+ * @Description: 第三步 用于网络请求 的接口
  */
-public class WangAndroidApi {
-
+public interface WangAndroidApi {
+    @GET("project/tree/json")
+    Call<ProjectBean> getProject();
 }
