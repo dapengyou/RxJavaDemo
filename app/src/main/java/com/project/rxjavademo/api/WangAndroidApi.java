@@ -2,6 +2,7 @@ package com.project.rxjavademo.api;
 
 import com.project.rxjavademo.bean.ProjectBean;
 
+import io.reactivex.Observable;
 import retrofit2.Call;
 import retrofit2.http.GET;
 
@@ -12,5 +13,6 @@ import retrofit2.http.GET;
  */
 public interface WangAndroidApi {
     @GET("project/tree/json")
-    Call<ProjectBean> getProject();
+//    Call<ProjectBean> getProject();
+    Observable<ProjectBean> getProject();
 }

@@ -41,8 +41,14 @@ dependencies {
     // 增加RxJava 2X 的依赖库
     implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
     implementation 'io.reactivex.rxjava2:rxjava:2.0.7'
+    //RxJava2 Adapter
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$rootProject.rxAdapter"
 
     //retrofit 第一步
     implementation "com.squareup.retrofit2:retrofit:$rootProject.retrofitVersion"
     implementation "com.squareup.retrofit2:converter-gson:$rootProject.retrofitVersion"
+
+    //okHttp
+    implementation "com.facebook.stetho:stetho:$rootProject.stetho"
+    implementation "com.facebook.stetho:stetho-okhttp3:$rootProject.stetho"
 }

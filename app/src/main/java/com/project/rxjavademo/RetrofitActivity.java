@@ -11,6 +11,11 @@ import com.project.rxjavademo.api.WangAndroidApi;
 import com.project.rxjavademo.bean.ProjectBean;
 import com.project.rxjavademo.util.HttpUtil;
 
+import io.reactivex.Scheduler;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.annotations.NonNull;
+import io.reactivex.functions.Consumer;
+import io.reactivex.schedulers.Schedulers;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -21,7 +26,8 @@ import retrofit2.Response;
  * @Description:
  */
 public class RetrofitActivity extends AppCompatActivity {
-   private TextView mTextView ;
+    private TextView mTextView;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,18 +37,31 @@ public class RetrofitActivity extends AppCompatActivity {
         findViewById(R.id.retrofit).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                requestRetrofit();
-//                requestRxJava();
+//                requestRetrofit();
+                requestRxJava();
             }
 
         });
     }
 
     private void requestRxJava() {
+        //retrofit 第五步 创建 网络请求接口 的实例
+        WangAndroidApi api = HttpUtil.getRetrofit().create(WangAndroidApi.class);
 
+        //第六步  获取网络数据
+        api.getProject().subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Consumer<ProjectBean>() {
+                    @Override
+                    public void accept(@NonNull ProjectBean projectBean) throws Exception {
+                        //第7步 处理返回的数据
+                        System.out.println(projectBean.toString());
+                        mTextView.setText(projectBean.toString());
+                    }
+                });
     }
 
-    private void requestRetrofit() {
+   /* private void requestRetrofit() {
         //retrofit 第五步 创建 网络请求接口 的实例
         WangAndroidApi api = HttpUtil.getRetrofit().create(WangAndroidApi.class);
         Call<ProjectBean> call = api.getProject();
@@ -61,5 +80,5 @@ public class RetrofitActivity extends AppCompatActivity {
 
             }
         });
-    }
+    }*/
 }

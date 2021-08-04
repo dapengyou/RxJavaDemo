@@ -25,4 +25,8 @@ task clean(type: Delete) {
 
 project.ext {
     retrofitVersion = "2.9.0"
+    rxJava = "2.0.7"
+    rxAndroid = "2.0.1"
+    rxAdapter = "2.9.0"
+    stetho = "1.6.0"
 }
