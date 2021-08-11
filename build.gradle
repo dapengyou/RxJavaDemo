@@ -29,4 +29,5 @@ project.ext {
     rxAndroid = "2.0.1"
     rxAdapter = "2.9.0"
     stetho = "1.6.0"
+    logging_interceptor = "4.9.1"
 }

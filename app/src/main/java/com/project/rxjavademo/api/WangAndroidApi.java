@@ -13,6 +13,8 @@ import retrofit2.http.GET;
  */
 public interface WangAndroidApi {
     @GET("project/tree/json")
-//    Call<ProjectBean> getProject();
     Observable<ProjectBean> getProject();
+
+    @GET("project/tree/json")
+    Call<ProjectBean> getProject1();
 }

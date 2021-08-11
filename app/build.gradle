@@ -51,4 +51,5 @@ dependencies {
     //okHttp
     implementation "com.facebook.stetho:stetho:$rootProject.stetho"
     implementation "com.facebook.stetho:stetho-okhttp3:$rootProject.stetho"
+    implementation "com.squareup.okhttp3:logging-interceptor:$rootProject.logging_interceptor"
 }

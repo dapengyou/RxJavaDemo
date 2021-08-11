@@ -28,7 +28,7 @@ import io.reactivex.schedulers.Schedulers;
 public class RxDownloadActivity extends AppCompatActivity {
     private static final String TAG = "RxDownloadActivity";
     // 网络图片的链接地址
-    private final static String PATH = "https://img-blog.csdnimg.cn/20190304140934631.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2xpa2VfbGdn,size_16,color_FFFFFF,t_70";
+    private final static String PATH = "https://alifei03.cfp.cn/creative/vcg/veer/1600water/veer-132668332.jpg";
 
     // 弹出加载框
     private ProgressDialog mProgressDialog;
@@ -64,7 +64,9 @@ public class RxDownloadActivity extends AppCompatActivity {
                     }
                 })
                 //切换线程
-                .compose(rxud())
+//                .compose(rxud())
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Observer<Bitmap>() {
                     @Override
                     public void onSubscribe(Disposable d) {
