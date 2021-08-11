@@ -83,7 +83,17 @@ just 操作符:
 ```
 
 ### 操作符有哪些
-
+1. [创建操作](https://mcxiaoke.gitbooks.io/rxdocs/content/operators/Creating-Observables.html) Create, Defer, Empty/Never/Throw, From, Interval, Just, Range, Repeat, Start, Timer
+2. [变换操作](https://mcxiaoke.gitbooks.io/rxdocs/content/operators/Transforming-Observables.html) Buffer, FlatMap, GroupBy, Map, Scan和Window
+3. [过滤操作](https://mcxiaoke.gitbooks.io/rxdocs/content/operators/Filtering-Observables.html) Debounce, Distinct, ElementAt, Filter, First, IgnoreElements, Last, Sample, Skip, SkipLast, Take, TakeLast
+4. [组合操作](https://mcxiaoke.gitbooks.io/rxdocs/content/operators/Combining-Observables.html) And/Then/When, CombineLatest, Join, Merge, StartWith, Switch, Zip
+5. [错误处理](https://mcxiaoke.gitbooks.io/rxdocs/content/operators/Error-Handling-Operators.html) Catch和Retry
+6. [辅助操作](https://mcxiaoke.gitbooks.io/rxdocs/content/operators/Observable-Utility-Operators.html) Delay, Do, Materialize/Dematerialize, ObserveOn, Serialize, Subscribe, SubscribeOn, TimeInterval, Timeout, Timestamp, Using
+7. [条件和布尔操作](https://mcxiaoke.gitbooks.io/rxdocs/content/operators/Conditional-and-Boolean-Operators.html) All, Amb, Contains, DefaultIfEmpty, SequenceEqual, SkipUntil, SkipWhile, TakeUntil, TakeWhile
+8. [算术和集合操作](https://mcxiaoke.gitbooks.io/rxdocs/content/operators/Mathematical-and-Aggregate-Operators.html) Average, Concat, Count, Max, Min, Reduce, Sum
+9. [转换操作](https://mcxiaoke.gitbooks.io/rxdocs/content/operators/To.html) To
+10. [连接操作](https://mcxiaoke.gitbooks.io/rxdocs/content/operators/Connectable-Observable-Operators.html) Connect, Publish, RefCount, Replay
+11. [反压操作](https://mcxiaoke.gitbooks.io/rxdocs/content/topics/Backpressure.html)，用于增加特殊的流程控制策略的操作符
 
 ### 举个栗子
 下面以从Url 中下载图片为例，展示简单的使用方法。
