@@ -33,6 +33,7 @@ import retrofit2.Response;
  */
 public class RetrofitActivity extends AppCompatActivity {
     private TextView mTextView;
+    private Disposable mDisposable;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -89,7 +90,7 @@ public class RetrofitActivity extends AppCompatActivity {
             }
         };
 
-//        observable.subscribe(observer);
+        observable.subscribe(observer);
         observable1.subscribe(observer);
     }
 
@@ -98,7 +99,7 @@ public class RetrofitActivity extends AppCompatActivity {
         WangAndroidApi api = HttpUtil.getRetrofit().create(WangAndroidApi.class);
 
         //第六步  获取网络数据
-        api.getProject().subscribeOn(Schedulers.io())
+        mDisposable = api.getProject().subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Consumer<ProjectBean>() {
                     @Override
@@ -129,5 +130,15 @@ public class RetrofitActivity extends AppCompatActivity {
 
             }
         });
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (mDisposable != null) {
+            if (!mDisposable.isDisposed()) {
+                mDisposable.dispose();
+            }
+        }
     }
 }
