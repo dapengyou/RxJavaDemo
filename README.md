@@ -93,7 +93,7 @@ just 操作符:
 8. [算术和集合操作](https://mcxiaoke.gitbooks.io/rxdocs/content/operators/Mathematical-and-Aggregate-Operators.html) Average, Concat, Count, Max, Min, Reduce, Sum
 9. [转换操作](https://mcxiaoke.gitbooks.io/rxdocs/content/operators/To.html) To
 10. [连接操作](https://mcxiaoke.gitbooks.io/rxdocs/content/operators/Connectable-Observable-Operators.html) Connect, Publish, RefCount, Replay
-11. [反压操作](https://mcxiaoke.gitbooks.io/rxdocs/content/topics/Backpressure.html)，用于增加特殊的流程控制策略的操作符
+11. [反压操作](https://mcxiaoke.gitbooks.io/rxdocs/content/topics/Backpressure.html) 用于增加特殊的流程控制策略的操作符
 
 ### 举个栗子
 下面以从Url 中下载图片为例，展示简单的使用方法。
